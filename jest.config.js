@@ -7,5 +7,4 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   roots: ['<rootDir>/src'],
   verbose: true,
-  setupFiles: ['dotenv/config'],
 }
