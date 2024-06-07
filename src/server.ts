@@ -13,6 +13,7 @@ const data: Data = {
 
 app.get('/', (req, res) => {
   console.log(data)
+  console.log('ugh', process.env)
   res.status(200).json({ secret: process.env.DAIN_SECRET })
 })
 
