@@ -30,4 +30,4 @@ jobs:
         DAIN_SECRET: ${{ secrets.DAIN_SECRET }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test:ci
+    - run: npm run test:ci
