@@ -4,7 +4,8 @@ module.exports = {
   },
   testEnvironment: 'node',
   testRegex: './src/.*\\.(test|spec)?\\.(ts|ts)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node',],
-  roots: ['<rootDir>/src',],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  roots: ['<rootDir>/src'],
   verbose: true,
+  setupFiles: ['dotenv/config'],
 }
