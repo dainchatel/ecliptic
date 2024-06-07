@@ -19,6 +19,8 @@ jobs:
         node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    env:
+      DAIN_SECRET: ${{ secrets.DAIN_SECRET }}
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -26,8 +28,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-      env:
-        DAIN_SECRET: ${{ secrets.DAIN_SECRET }}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test

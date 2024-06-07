@@ -1,5 +1,13 @@
+import { app } from '../server'
+import request from 'supertest'
+
 describe('my block', () => {
-  it('does my stuff ', () => {
-    expect(2 + 2).toStrictEqual(4)
+  it('does my stuff ', async () => {
+    const res = await request(app)
+      .get('/')
+      .expect(200)
+
+    expect(res.body.secret).toStrictEqual('heheheheh')
+
   })
 })
