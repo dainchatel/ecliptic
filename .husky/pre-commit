@@ -1,4 +1,2 @@
 npm test
-echo cool - tests passed
 npm run lint
-echo cool - linting passed 
