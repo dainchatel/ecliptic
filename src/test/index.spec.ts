@@ -1,13 +1,14 @@
 import { app } from '../server'
 import request from 'supertest'
 
-describe('my block', () => {
-  it('does my stuff ', async () => {
-    const res = await request(app)
+describe('endpoint testing', () => {
+  const server = request(app)
+  it('loads document at home route', async () => {
+    const res = await server
       .get('/')
       .expect(200)
 
-    expect(res.body.secret).toStrictEqual('heheheheh')
+    expect(res.body.docName).toStrictEqual('hotelsdotcom')
 
   })
 })

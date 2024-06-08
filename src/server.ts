@@ -1,20 +1,14 @@
 import express, { Application } from 'express'
-import { Data } from './types'
+import { fetchDocument } from './fetchDocument'
 import { config } from 'dotenv'
 
 config()
 
 const app: Application = express()
 
-const data: Data = {
-  stays: [{ id: 'new hotel' }],
-  articles: ['first article'],
-}
-
-app.get('/', (req, res) => {
-  console.log(data)
-  console.log('ugh', process.env)
-  res.status(200).json({ secret: process.env.DAIN_SECRET })
+app.get('/', async (req, res) => {
+  const doc = await fetchDocument()
+  res.status(200).json({ docName: doc })
 })
 
 app.get('*', function (_req, res) {
