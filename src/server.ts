@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
     .filter(filterRawArticles)
     .map(mapRawArticles)
 
-  res.status(200).json({ stays, articles })
+  res.status(200).json({ stays, articles, hello: 'dain' })
 })
 
 app.get('*', function (_req, res) {
